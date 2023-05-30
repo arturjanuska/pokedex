@@ -1,0 +1,19 @@
+:root {
+	font-family: 'Josefin Sans', sans-serif;
+	background-image: url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png');
+}
+
+body {
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+	padding: 0;
+}
