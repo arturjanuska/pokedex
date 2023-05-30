@@ -21,8 +21,10 @@ const pokemonReducer = (state, action) => {
 		}
 		case 'add_pokemons': {
 			const pokemonsCopy = state.pokemons;
+
 			const newPokemons = action.payload;
-			const connectedArrays = pokemonsCopy.concat(newPokemons);
+
+			const connectedArrays = [...pokemonsCopy, ...newPokemons];
 
 			return { ...state, pokemons: connectedArrays };
 		}
@@ -92,7 +94,9 @@ const searchPokemon = (dispatch) => (inputValue) => {
 };
 
 const loadMore = (dispatch) => async () => {
+	console.log('called');
 	const result = await axios.get(nextPageUrl);
+
 	const pokemonData = result.data.results;
 
 	const pokemons = await Promise.all(

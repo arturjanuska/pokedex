@@ -77,8 +77,30 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	.loading-container {
-		height: max-content;
+	.load-button {
+		margin-bottom: 2rem;
+		padding: 0.6rem 2rem;
+		border-top-left-radius: 2px;
+		border-top-right-radius: 50px;
+		border-bottom-left-radius: 50px;
+		border-bottom-right-radius: 2px;
+		border: none;
+		background: linear-gradient(
+			180deg,
+			rgba(255, 0, 0, 1) 15%,
+			rgba(255, 255, 255, 1) 53%
+		);
+		box-shadow: 1px 1px 3px 0px #00000038;
+		font-weight: 500;
+		font-size: 16px;
+		font-family: 'Josefin Sans', sans-serif;
+		transition: 0.1s all ease-in-out;
+		&:hover {
+			cursor: pointer;
+		}
+		&:active {
+			transform: scale(0.99);
+		}
 	}
 }
 

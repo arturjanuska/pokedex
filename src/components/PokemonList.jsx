@@ -16,28 +16,6 @@ function PokemonList() {
 		allPokemons();
 	}, []);
 
-	const handleScroll = () => {
-		const scrollTop =
-			document.documentElement.scrollTop || document.body.scrollTop;
-		const scrollHeight =
-			document.documentElement.scrollHeight || document.body.scrollHeight;
-		const clientHeight =
-			document.documentElement.clientHeight || window.innerHeight;
-
-		if (scrollTop + clientHeight + 20 >= scrollHeight) {
-			loadMore();
-		} else {
-			return;
-		}
-	};
-
-	useEffect(() => {
-		window.addEventListener('scroll', handleScroll);
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
-
 	return (
 		<>
 			{state.allPokemons.length > 0 ? (
@@ -52,7 +30,12 @@ function PokemonList() {
 							))}
 					</ul>
 					<div className='loading-section'>
-						<Loading />
+						<button
+							onClick={loadMore}
+							className='load-button'
+						>
+							Load More
+						</button>
 					</div>
 				</div>
 			) : (
